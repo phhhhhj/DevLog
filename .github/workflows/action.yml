@@ -1,5 +1,8 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+    - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
       run: npm run build
 
     - name: deploy
-      uses: phhhhhj/DevLog@gh-pages
+      uses: phhhhhj/DevLog@main
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         PUBLISH_BRANCH: gh-pages
