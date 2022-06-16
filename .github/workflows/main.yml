@@ -1,0 +1,21 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+
+    - name: npm install
+      run: npm i
+
+    - name: npm build
+      run: npm run build
+
+    - name: deploy
+      uses: phhhhhj/DevLog@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs/.vuepress/dist
