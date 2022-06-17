@@ -19,14 +19,14 @@ module.exports = {
     sidebar: [
       '/', '/sample', ['/sample', '새앰프을']
     ],
-    plugins: [
-      '@vuepress/back-to-top',
-      ['@vuepress/pwa', {
-        serviceWorker: true,
-        updatePopup: true
-      }]
-    ]
   },
+  plugins: [
+    ['@vuepress/back-to-top'],
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: true
+    }]
+  ],
   markdown: {
     lineNumbers: true
   }
