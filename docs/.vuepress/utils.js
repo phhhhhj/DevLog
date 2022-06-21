@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require('path');
 
 function getSidebar() {
-  const root = getRoot() + '\\docs';
+  const root = getRoot() + '/docs';
 
   let sidebarArr = [];
   let HomeArr = [];
