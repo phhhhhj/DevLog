@@ -3,15 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Spring AOP | hyunjungLog</title>
+    <title>Home | hyunjungLog</title>
     <meta name="generator" content="VuePress 1.9.7">
     
-    <meta name="description" content="문서의 description">
-    <meta property="og:title" content="문서의 title">
-    <meta property="og:description" content="문서의 description">
-    <meta property="og:url" content="http://localhost:8080/">
+    <meta name="description" content="hyunjung&#39;s DevLog">
     
-    <link rel="preload" href="/assets/css/0.styles.b4c82722.css" as="style"><link rel="preload" href="/assets/js/app.e132fdfa.js" as="script"><link rel="preload" href="/assets/js/2.93a08ae5.js" as="script"><link rel="preload" href="/assets/js/8.8a3c528f.js" as="script"><link rel="prefetch" href="/assets/js/3.533c95c2.js"><link rel="prefetch" href="/assets/js/4.ad05d2e4.js"><link rel="prefetch" href="/assets/js/5.29de62f0.js"><link rel="prefetch" href="/assets/js/6.5b5787bf.js"><link rel="prefetch" href="/assets/js/7.948e582f.js"><link rel="prefetch" href="/assets/js/9.38e2e775.js">
+    <link rel="preload" href="/assets/css/0.styles.b4c82722.css" as="style"><link rel="preload" href="/assets/js/app.ecffa253.js" as="script"><link rel="preload" href="/assets/js/2.6564b28a.js" as="script"><link rel="preload" href="/assets/js/8.f06a43cc.js" as="script"><link rel="prefetch" href="/assets/js/10.e87dff29.js"><link rel="prefetch" href="/assets/js/11.b98aec25.js"><link rel="prefetch" href="/assets/js/3.09d4088e.js"><link rel="prefetch" href="/assets/js/4.4ec4c46f.js"><link rel="prefetch" href="/assets/js/5.08368f6e.js"><link rel="prefetch" href="/assets/js/6.bc9ec240.js"><link rel="prefetch" href="/assets/js/7.cbb60e8f.js"><link rel="prefetch" href="/assets/js/9.d0385918.js">
     <link rel="stylesheet" href="/assets/css/0.styles.b4c82722.css">
   </head>
   <body>
@@ -23,97 +20,11 @@
   Home
 </a></div><div class="nav-item"><a href="https://github.com/phhhhhj" target="_blank" rel="noopener noreferrer" class="nav-link external">
   GitHub
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>HOME</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/" aria-current="page" class="active sidebar-link">Spring AOP</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/#_1-pom-xml" class="sidebar-link">1. pom.xml</a></li><li class="sidebar-sub-header"><a href="/#_2-main-method" class="sidebar-link">2. main method</a></li><li class="sidebar-sub-header"><a href="/#_3-advice-or-aspect-정의" class="sidebar-link">3. Advice or Aspect 정의</a></li><li class="sidebar-sub-header"><a href="/#_1-annotation-작성" class="sidebar-link">1. Annotation 작성</a></li><li class="sidebar-sub-header"><a href="/#_2-advice-or-aspect-정의" class="sidebar-link">2. Advice or Aspect 정의</a></li><li class="sidebar-sub-header"><a href="/#_3-advice-적용" class="sidebar-link">3. Advice 적용</a></li></ul></li><li><a href="/sample.html" class="sidebar-link">샵하나는 제목으로 자동 설정됩니다.</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>1.test1</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="spring-aop"><a href="#spring-aop" class="header-anchor">#</a> Spring AOP</h1> <h1 id="aop란"><a href="#aop란" class="header-anchor">#</a> AOP란</h1> <ul><li>Aspect Oriented Programming, 관점 지향 프로그래밍</li> <li>핵심기능(Core Concerns)에서 부가기능(Cross-cutting Concerns)을 분리해서 모듈화하는 프로그래밍 기법</li></ul> <p><img src="Spring%20AOP%20b1debdd992ab41cdbf605734bda97c4f/Untitled.png" alt="Untitled"></p> <p><img src="Spring%20AOP%20b1debdd992ab41cdbf605734bda97c4f/Untitled%201.png" alt="Untitled"></p> <h1 id="aop-용어"><a href="#aop-용어" class="header-anchor">#</a> AOP 용어</h1> <ul><li>핵심기능 : Core Concern(Primary Concern), 비즈니스 로직 구현</li> <li>부가기능 : Cross-cutting Concern, Advice 라고 하기도 함</li> <li>Point-cut : 부가기능을 어디에 끼워넣는지에 대한 위치정보가 들어있는 문법</li> <li>weaving : runtime시에 부가기능을 핵심기능에 끼워넣는 것</li> <li>Aspect : Cross-cutting Concern + Point-cut
-스프링에서는 Advisor라고 하기도 함</li></ul> <p><img src="Spring%20AOP%20b1debdd992ab41cdbf605734bda97c4f/Untitled%202.png" alt="Untitled"></p> <h1 id="springboot에서-aop-사용하기"><a href="#springboot에서-aop-사용하기" class="header-anchor">#</a> SpringBoot에서 AOP 사용하기</h1> <h2 id="_1-pom-xml"><a href="#_1-pom-xml" class="header-anchor">#</a> 1. pom.xml</h2> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- AOP 라이브러리 추가 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-aop<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_2-main-method"><a href="#_2-main-method" class="header-anchor">#</a> 2. main method</h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@EnableAspectJAutoProxy</span>  <span class="token comment">// main method에 Aspect annotation 적용</span>
-<span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringdemoApplication</span> <span class="token punctuation">{</span>
-
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">SpringdemoApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_3-advice-or-aspect-정의"><a href="#_3-advice-or-aspect-정의" class="header-anchor">#</a> 3. Advice or Aspect 정의</h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Aspect</span>  <span class="token comment">// @Aspect 선언</span>
-<span class="token annotation punctuation">@Component</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LogAspect</span> <span class="token punctuation">{</span>
-
-    <span class="token comment">// Aspect 안의 method가 사실상의 cross cutting concern이 됨(method 하나가 Advice)</span>
-
-    <span class="token comment">/** point-cut 문법
-     * Spring AOP의 경우 method 호출의 경우에만 weaving이 가능함
-     * -&gt; 어떤 method가 호출될 때, 이 cross cutting concern을 weaving하라는 내용
-     *
-     * 아래 예시
-     * UserService의 모든 method가 호출될 때 이 Advice를 호출하라
-     * @Around : method 호출 전후에 모두 실헹
-     * 첫번째 *의 의미 : 모든 return type
-     * 두번째 *의 의미 : 모든 method
-     * 두번째 * 뒤에 붙는 (..)의 의미 : 모든 parameter
-     *
-     * 다른 예시
-     * execution(* com.acompany.springdemo.service.*.get*(..))
-     * -&gt; service package 내의 모든 class의 get으로 시작하는 모든 method
-     */</span>
-    <span class="token annotation punctuation">@Around</span><span class="token punctuation">(</span><span class="token string">&quot;execution(* com.acompany.springdemo.service.UserService.*(..))&quot;</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">logging</span><span class="token punctuation">(</span><span class="token class-name">ProceedingJoinPoint</span> pjp<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Object</span> result <span class="token operator">=</span> pjp<span class="token punctuation">.</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="advice-종류"><a href="#advice-종류" class="header-anchor">#</a> Advice 종류</h3> <table><thead><tr><th>@Before</th> <th>target method가 호출되기 전에 Advice 기능 수행</th></tr></thead> <tbody><tr><td>@After</td> <td>target method의 결과가 성공이든 예외든 관계없이</td></tr> <tr><td>target method가 완료되면 Advice 기능 수행</td> <td></td></tr> <tr><td>@AfterReturning</td> <td>target method가 성공적으로 결과값을 반환하면 Advice 기능 수행</td></tr> <tr><td>결과값을 받아서 작업이 가능함</td> <td></td></tr> <tr><td>@AfterThrowing</td> <td>target method가 수행 중 예외를 던지면 Advice 기능 수행</td></tr> <tr><td>@Around</td> <td>target method 호출 전과 후에 Advice 기능 수행</td></tr></tbody></table> <h1 id="annotation을-이용한-aop"><a href="#annotation을-이용한-aop" class="header-anchor">#</a> Annotation을 이용한 AOP</h1> <h2 id="_1-annotation-작성"><a href="#_1-annotation-작성" class="header-anchor">#</a> 1. Annotation 작성</h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
- * @Retention
- * custom annotation 생성시 해당 annotation이 언제까지 살아 남아 있을지(실제로 적용, 유지되는 범위) 결정
-		 * RetentionPolicy.SOURCE : 소스 코드(.java)까지 살아 남음
-		 * RetentionPolicy.CLASS : 클래스 파일(.class)까지 살아 남음
-		 * RetentionPolicy.RUNTIME : runtime까지 살아 남음(사실상 안 사라진다고 보면 됨)
- *
- * @Target
- * custom annotation이 적용될 대상을 지정하는 annotation
-		 * ElementType.PACKAGE : 패키지 선언
-		 * ElementType.TYPE : 타입 선언
-		 * ElementType.ANNOTATION_TYPE : 어노테이션 타입 선언
-		 * ElementType.CONSTRUCTOR : 생성자 선언
-		 * ElementType.FIELD : 멤버 변수 선언
-		 * ElementType.LOCAL_VARIABLE : 지역 변수 선언
-		 * ElementType.METHOD : 메서드 선언
-		 * ElementType.PARAMETER : 전달인자 선언
-		 * ElementType.TYPE_PARAMETER : 전달인자 타입 선언
-		 * ElementType.TYPE_USE : 타입 선언
- */</span>
-<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span>
-<span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>METHOD<span class="token punctuation">)</span>  <span class="token comment">// method 선언시 사용</span>
-<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">TokenRequired</span> <span class="token punctuation">{</span>  <span class="token comment">// TokenRequired라는 이름의 annotation 생성</span>
-<span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="_2-advice-or-aspect-정의"><a href="#_2-advice-or-aspect-정의" class="header-anchor">#</a> 2. Advice or Aspect 정의</h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Aspect</span>
-<span class="token annotation punctuation">@Component</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TokenRequiredAspect</span> <span class="token punctuation">{</span>
-
-    <span class="token comment">/**
-     * Advice의 parameter로 적힌 annotation명을 적어줌
-     * -&gt; tokenRequired라는 annotation이 적힌 method에 이 Advice가 weaving됨
-     */</span>
-    <span class="token annotation punctuation">@Before</span><span class="token punctuation">(</span><span class="token string">&quot;@annotation(tokenRequired)&quot;</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">tokenRequiredWithAnnotation</span><span class="token punctuation">(</span><span class="token class-name">TokenRequired</span> tokenRequired<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Before tokenRequiredWithAnnotation&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_3-advice-적용"><a href="#_3-advice-적용" class="header-anchor">#</a> 3. Advice 적용</h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@ResponseBody</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/test/aop/with/annotation&quot;</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@TokenRequired</span>  <span class="token comment">// Advice 적용</span>
-<span class="token keyword">public</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> <span class="token function">testAOPAnnotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;result&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Aloha&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> map<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2022, 2:11:53 AM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/sample.html">
-        샵하나는 제목으로 자동 설정됩니다.
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>HOME</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/" aria-current="page" class="active sidebar-link">Home</a></li><li><a href="/sample.html" class="sidebar-link">Home2</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring AOP</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="home"><a href="#home" class="header-anchor">#</a> Home</h1> <p>홈화면이다아아</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2022, 8:14:16 AM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/sample.html">
+        Home2
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.e132fdfa.js" defer></script><script src="/assets/js/2.93a08ae5.js" defer></script><script src="/assets/js/8.8a3c528f.js" defer></script>
+    <script src="/assets/js/app.ecffa253.js" defer></script><script src="/assets/js/2.6564b28a.js" defer></script><script src="/assets/js/8.f06a43cc.js" defer></script>
   </body>
 </html>
