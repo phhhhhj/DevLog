@@ -9,6 +9,7 @@ function getSidebar() {
   const filelist = fs.readdirSync(root);
   filelist.forEach((file) => {
     if (file === ".vuepress") return;
+    if (file.charAt(0) === "_") return;
 
     const filePath = root + "/" + file;
     const stat = fs.lstatSync(filePath);
