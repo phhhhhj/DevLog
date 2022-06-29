@@ -1,7 +1,5 @@
 ---
-meta:
-  - name: description
-    content: hyunjung's DevLog
+sidebarDepth: 0
 ---
 
 # About
@@ -18,6 +16,3 @@ meta:
   - 빅데이터 분석을 위한 AI(머신러닝, 딥러닝) 응용소프트웨어 개발자 과정 수료 (2020.02~2020.08)
   - 서울시립대학교 경제학부 졸업
   - 경복비즈니스고등학교 정보처리과 졸업
-
-# Tags
-<TagList />
